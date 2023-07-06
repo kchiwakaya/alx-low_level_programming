@@ -12,7 +12,8 @@
 unsigned int binary_to_uint(const char *b)
 {
 	int c = 0;
-	int num = 0, index = 1;
+	int num = 0;
+	int index = 1;
 	unsigned int base10 = 0;
 
 	if (b == NULL)
