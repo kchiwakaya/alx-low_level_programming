@@ -5,7 +5,6 @@
  * @n: number to convert into binary
  *
  */
-
 void print_binary(unsigned long int n) 
 {
   if (n > 1)
