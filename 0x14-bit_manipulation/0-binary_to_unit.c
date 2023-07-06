@@ -3,32 +3,35 @@
 #include "main.h"
 
 /**
- * binary_to_uint - convert from binary to unsigned int
- * @b: binary
+ * binary_to_uint - converts a binary number to an unsigned int
+ * @b: binary string
  *
- * Return: unsigned int
+ * Return: the unsigned int
  */
 
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0, count = 0, mult = 1;
-	unsigned int decimal = 0;
+	int c = 0;
+	int num = 0; index = 1;
+	unsigned int base10 = 0;
 
 	if (b == NULL)
 		return (0);
-	while (b[i] != '\0')
+	while (b[c] != '\0')
 	{
-		if ((b[i] - '0') != 0 && (b[i] - '0') != 1)
+		if ((b[c] - '0') != 0 && (b[c] - '0') != 1)
 			return (0);
-		count++;
-		i++;
+		num++;
+		c++;
 	}
-	for (i = count - 1; i >= 0; i--)
+	c = num -1
+	while ( c >= 0)
 	{
-		if (b[i] == '1')
-			decimal += mult;
-		mult = mult * 2;
+		if (b[c] == '1')
+			base10 += index;
+		index = index * 2;
+		c--;
 	}
-	return (decimal);
+	return (base10);
 }
 
