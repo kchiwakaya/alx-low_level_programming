@@ -2,9 +2,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * read_textfile -  reads text file and prints to the POSIX std output
