@@ -11,8 +11,8 @@ int bytes_read;
 char *file_from = argv[1];
 char *file_to = argv[2];
 
-int fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
-int fd_from = open(file_from, O_RDONLY);
+int fd_to;
+int fd_from;
 
 int main(int argc, char *argv[]) {
   if (argc != 2) {
@@ -24,6 +24,11 @@ int main(int argc, char *argv[]) {
     dprintf(2, "Error: Can't read from file %s\n", file_from);
     exit(98);
   }
+  *file_from = argv[1];
+  *file_to = argv[2];
+
+  fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+  fd_from = open(file_from, O_RDONLY);
 
   if (fd_to < 0) {
     dprintf(2, "Error: Can't write to file %s\n", file_to);
