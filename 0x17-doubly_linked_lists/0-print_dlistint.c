@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 /**
  * print_dlistint- prints element in DLL
@@ -8,11 +9,13 @@ size_t print_dlistint(const dlistint_t *h)
 {
 	size_t counter = 0;
 	if (h == NULL)
-		return;
-	do{
+		return (counter);
+	while (h)
+	{	
 		printf("%d ", h->n);
+		h = h->next;
 		counter++;
-	}while (h);
+	}
 	return (counter);
 
 }
